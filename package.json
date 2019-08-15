@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/artemlopatin/fftyping/issues"
   },
-  "homepage": "https://github.com/artemlopatin/fftyping#readme"
+  "homepage": "https://github.com/artemlopatin/fftyping#readme",
+  "devDependencies": {
+    "webpack": "^4.39.2"
+  }
 }
