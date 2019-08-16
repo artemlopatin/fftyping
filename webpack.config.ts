@@ -1,13 +1,42 @@
-import * as webpack from "webpack";
-import * as path from "path";
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config: webpack.Configuration = {
+module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
-    }
-};
+    },
+    devServer: {
+        host: 'localhost',
+        port: 8080,
+        contentBase: './dist',
+        hot: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'awesome-typescript-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                },
+            },
 
-export default config;
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ],
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
+};
