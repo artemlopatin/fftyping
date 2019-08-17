@@ -5,3 +5,6 @@ ReactDOM.render(
     <div />,
     document.getElementById('root')
 );
+
+// @ts-ignore
+module.hot.accept();

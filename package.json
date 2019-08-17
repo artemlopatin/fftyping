@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "phaser": "^3.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
