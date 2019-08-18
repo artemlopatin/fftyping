@@ -20,7 +20,11 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'awesome-typescript-loader',
                 exclude: /node_modules/
-            }
+            },
+            {
+                loader: 'file-loader',
+                test: /\.(png|jpe?g|gif)$/i,
+            },
         ]
     },
     plugins: [
