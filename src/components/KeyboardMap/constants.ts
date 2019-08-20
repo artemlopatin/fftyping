@@ -324,4 +324,13 @@ export const keyboardMap: KeyboardMap = [
             },
         },
     ],
+    [
+        {
+            keyCode: 32,
+            symbol: {
+                normal: ' ',
+                withShift: ' '
+            }
+        }
+    ]
 ];
