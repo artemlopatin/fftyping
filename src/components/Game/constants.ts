@@ -1,1 +1,0 @@
-export const GAME_CONTAINER_ID = 'phaser-container';
