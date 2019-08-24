@@ -37,16 +37,16 @@ export class KeyboardButtonGameObject extends Phaser.GameObjects.Extern {
      * Calculate coordinates [x, y] from params [row, column]
      */
     private calcXY() {
-        const delta = this.row === 0 ? 40 : 100;
-        this.x = delta + this.column * 60 + this.row * 12;
-        this.y = 470 + this.row * 35;
+        const delta = this.row === 0 ? 30 : 90;
+        this.x = delta + this.column * 60 + this.row * 15;
+        this.y = 420 + this.row * 38;
     }
 
     /**
      * Draw button background
      */
     private drawButton() {
-        const radius = 12;
+        const radius = 15;
         const circle = new Phaser.Geom.Circle(this.x, this.y, radius);
         const graphics = this.scene.add.graphics({
             lineStyle: {
