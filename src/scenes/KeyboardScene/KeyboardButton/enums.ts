@@ -1,11 +1,11 @@
-export enum finger {
-    'leftPinky',
-    'leftRing',
-    'leftMiddle',
-    'leftIndex',
-    'thumb',
-    'rightIndex',
-    'rightMiddle',
-    'rightRing',
-    'rightPinky',
+export enum Finger {
+    'LeftPinky',
+    'LeftRing',
+    'LeftMiddle',
+    'LeftIndex',
+    'Thumb',
+    'RightIndex',
+    'RightMiddle',
+    'RightRing',
+    'RightPinky',
 }

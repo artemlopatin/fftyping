@@ -34,7 +34,8 @@ export class KeyboardScene extends Phaser.Scene implements SceneInterface {
                 this.add.keyboardButton({
                     row,
                     column,
-                    symbol: key.symbol.normal
+                    symbol: key.symbol.normal,
+                    finger: key.finger
                 });
             })
         });
