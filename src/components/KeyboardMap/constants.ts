@@ -1,9 +1,11 @@
 import {KeyboardMap} from './types';
+import {Finger} from '../../scenes/KeyboardScene/KeyboardButton/enums';
 
 export const keyboardMap: KeyboardMap = [
     [
         {
             keyCode: 192,
+            finger: Finger.LeftPinky,
             symbol: {
                 normal: 'ё',
                 withShift: 'Ё'
@@ -11,6 +13,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 49,
+            finger: Finger.LeftPinky,
             symbol: {
                 normal: '1',
                 withShift: '!'
@@ -18,6 +21,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 50,
+            finger: Finger.LeftRing,
             symbol: {
                 normal: '2',
                 withShift: '"'
@@ -25,6 +29,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 51,
+            finger: Finger.LeftMiddle,
             symbol: {
                 normal: '3',
                 withShift: '№'
@@ -32,6 +37,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 52,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: '4',
                 withShift: ';'
@@ -39,6 +45,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 53,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: '5',
                 withShift: '%'
@@ -46,6 +53,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 54,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: '6',
                 withShift: ':'
@@ -53,6 +61,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 55,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: '7',
                 withShift: '?'
@@ -60,6 +69,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 56,
+            finger: Finger.RightMiddle,
             symbol: {
                 normal: '8',
                 withShift: '*'
@@ -67,6 +77,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 57,
+            finger: Finger.RightRing,
             symbol: {
                 normal: '9',
                 withShift: '('
@@ -74,6 +85,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 48,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: '0',
                 withShift: ')'
@@ -81,6 +93,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 189,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: '-',
                 withShift: '_'
@@ -88,6 +101,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 187,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: '=',
                 withShift: '+'
@@ -97,6 +111,7 @@ export const keyboardMap: KeyboardMap = [
     [
         {
             keyCode: 81,
+            finger: Finger.LeftPinky,
             symbol: {
                 normal: 'й',
                 withShift: 'Й'
@@ -104,6 +119,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 87,
+            finger: Finger.LeftRing,
             symbol: {
                 normal: 'ц',
                 withShift: 'Ц'
@@ -111,6 +127,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 69,
+            finger: Finger.LeftMiddle,
             symbol: {
                 normal: 'у',
                 withShift: 'У'
@@ -118,6 +135,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 82,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'к',
                 withShift: 'К'
@@ -125,6 +143,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 84,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'е',
                 withShift: 'Е'
@@ -132,6 +151,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 89,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'н',
                 withShift: 'Н'
@@ -139,6 +159,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 85,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'г',
                 withShift: 'Г'
@@ -146,6 +167,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 73,
+            finger: Finger.RightMiddle,
             symbol: {
                 normal: 'ш',
                 withShift: 'Ш'
@@ -153,6 +175,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 79,
+            finger: Finger.RightRing,
             symbol: {
                 normal: 'щ',
                 withShift: 'Щ'
@@ -160,6 +183,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 80,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: 'з',
                 withShift: 'З'
@@ -167,6 +191,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 219,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: 'х',
                 withShift: 'Х'
@@ -174,6 +199,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 221,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: 'ъ',
                 withShift: 'Ъ'
@@ -183,6 +209,7 @@ export const keyboardMap: KeyboardMap = [
     [
         {
             keyCode: 65,
+            finger: Finger.LeftPinky,
             symbol: {
                 normal: 'ф',
                 withShift: 'Ф'
@@ -190,6 +217,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 83,
+            finger: Finger.LeftRing,
             symbol: {
                 normal: 'ы',
                 withShift: 'Ы'
@@ -197,6 +225,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 68,
+            finger: Finger.LeftMiddle,
             symbol: {
                 normal: 'в',
                 withShift: 'В'
@@ -204,6 +233,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 70,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'а',
                 withShift: 'А'
@@ -211,6 +241,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 71,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'п',
                 withShift: 'П'
@@ -218,6 +249,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 72,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'р',
                 withShift: 'Р'
@@ -225,6 +257,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 74,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'о',
                 withShift: 'О'
@@ -232,6 +265,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 75,
+            finger: Finger.RightMiddle,
             symbol: {
                 normal: 'л',
                 withShift: 'Л'
@@ -239,6 +273,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 76,
+            finger: Finger.RightRing,
             symbol: {
                 normal: 'д',
                 withShift: 'Д'
@@ -246,6 +281,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 186,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: 'ж',
                 withShift: 'Ж'
@@ -253,6 +289,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 222,
+            finger: Finger.RightPinky,
             symbol: {
                 normal: 'э',
                 withShift: 'Э'
@@ -262,6 +299,7 @@ export const keyboardMap: KeyboardMap = [
     [
         {
             keyCode: 90,
+            finger: Finger.LeftPinky,
             symbol: {
                 normal: 'я',
                 withShift: 'Я'
@@ -269,6 +307,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 88,
+            finger: Finger.LeftRing,
             symbol: {
                 normal: 'ч',
                 withShift: 'Ч'
@@ -276,6 +315,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 67,
+            finger: Finger.LeftMiddle,
             symbol: {
                 normal: 'с',
                 withShift: 'С'
@@ -283,6 +323,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 86,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'м',
                 withShift: 'М'
@@ -290,6 +331,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 66,
+            finger: Finger.LeftIndex,
             symbol: {
                 normal: 'и',
                 withShift: 'И'
@@ -297,6 +339,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 78,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'т',
                 withShift: 'Т'
@@ -304,6 +347,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 77,
+            finger: Finger.RightIndex,
             symbol: {
                 normal: 'ь',
                 withShift: 'Ь'
@@ -311,6 +355,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 188,
+            finger: Finger.RightMiddle,
             symbol: {
                 normal: 'б',
                 withShift: 'Б'
@@ -318,6 +363,7 @@ export const keyboardMap: KeyboardMap = [
         },
         {
             keyCode: 190,
+            finger: Finger.RightRing,
             symbol: {
                 normal: 'ю',
                 withShift: 'Ю'
@@ -327,6 +373,7 @@ export const keyboardMap: KeyboardMap = [
     [
         {
             keyCode: 32,
+            finger: Finger.Thumb,
             symbol: {
                 normal: ' ',
                 withShift: ' '
