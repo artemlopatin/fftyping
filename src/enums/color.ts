@@ -16,5 +16,5 @@ export enum Color {
     Set8Background = 0x99cc99,
     Set8Border = 0x339933,
     Set9Background = 0x66ccff,
-    Set9Border = 0x99cc99,
+    Set9Border = 0x3399cc,
 }

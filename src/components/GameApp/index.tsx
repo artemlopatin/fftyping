@@ -1,16 +1,15 @@
 import React from 'react';
 import Phaser from 'phaser'
-import {GameContext} from '../GameContext'
+import {KeyboardScene} from '../../scenes/KeyboardScene';
+import {BackgroundScene} from '../../scenes/BackgroundScene';
+
 import {gameConfig} from './constants';
 
-const PhaserGame = new Phaser.Game(gameConfig);
+export const GameApp = () => {
+    const PhaserGame = new Phaser.Game(gameConfig);
 
-export class GameApp extends React.Component {
-    render() {
-        return (
-            <GameContext.Provider value={PhaserGame}>
-                <div />
-            </GameContext.Provider>
-        );
-    }
-}
+    PhaserGame.scene.add('BackgroundScene', BackgroundScene, true, {x: 0, y: 0});
+    PhaserGame.scene.add('KeyboardScene', KeyboardScene, true, {x: 0, y: 0});
+
+    return (<></>);
+};

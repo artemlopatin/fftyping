@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import GameConfig = Phaser.Types.Core.GameConfig;
 
-export const GAME_CONTAINER_ID = 'phaser-container';
+export const GAME_CONTAINER_ID = 'game-canvas';
 
 export const gameConfig: GameConfig = {
     width: 800,
