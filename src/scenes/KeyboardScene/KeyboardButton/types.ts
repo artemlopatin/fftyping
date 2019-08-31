@@ -1,6 +1,10 @@
-import {Finger} from './enums';
+import {Finger} from '../../../enums/finger';
+import {KeyboardEventCode} from '../../../enums/keyboardEventCode';
 
 export type Params = {
+    /** KeyboardEvent Code */
+    code: KeyboardEventCode;
+
     /** row number */
     row: number;
 

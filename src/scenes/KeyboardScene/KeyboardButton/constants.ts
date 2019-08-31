@@ -1,7 +1,7 @@
 import {Color} from '../../../enums/color';
 
 import {ColorByFinger} from './types';
-import {Finger} from './enums';
+import {Finger} from '../../../enums/finger';
 
 export const BACKGROUND_COLOR_BY_FINGER: ColorByFinger = {
     [Finger.LeftPinky]: Color.Set1Background,

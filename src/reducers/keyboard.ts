@@ -1,8 +1,9 @@
 import {omit} from 'lodash';
 import {KeyboardAction} from '../actions/keyboard';
+import {KeyboardEventCode} from '../enums/keyboardEventCode';
 
 type keyboardStore = {
-    pressedKeys: { [key: string]: KeyboardEvent }
+    pressedKeys: { [key in KeyboardEventCode]?: KeyboardEvent }
 }
 const initialState: keyboardStore = {
     pressedKeys: {}

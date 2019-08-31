@@ -1,4 +1,5 @@
-import {Finger} from '../../scenes/KeyboardScene/KeyboardButton/enums';
+import {Finger} from '../enums/finger';
+import {KeyboardEventCode} from '../enums/keyboardEventCode';
 
 export type KeySymbol = {
     normal: string;
@@ -6,6 +7,7 @@ export type KeySymbol = {
 }
 
 export type KeyboardKey = {
+    code: KeyboardEventCode;
     keyCode: number;
     finger: Finger;
     symbol: KeySymbol;

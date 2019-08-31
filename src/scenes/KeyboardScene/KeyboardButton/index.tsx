@@ -1,13 +1,14 @@
 import Phaser from 'phaser'
-
 import {Params} from './types';
-import {Finger} from './enums';
+import {Finger} from '../../../enums/finger';
 import {BACKGROUND_COLOR_BY_FINGER, BORDER_COLOR_BY_FINGER} from './constants';
 
 /**
  * Keyboard button
  */
 export class KeyboardButtonGameObject extends Phaser.GameObjects.Extern {
+    radius = 15;
+
     /** row number */
     row: number;
 
@@ -26,6 +27,12 @@ export class KeyboardButtonGameObject extends Phaser.GameObjects.Extern {
     /** y-coordinate */
     y: number;
 
+    isPressed: boolean;
+
+    graphics: Phaser.GameObjects.Graphics;
+
+    text: Phaser.GameObjects.Text;
+
     constructor(scene: Phaser.Scene, params: Params) {
         super(scene);
 
@@ -35,8 +42,19 @@ export class KeyboardButtonGameObject extends Phaser.GameObjects.Extern {
         this.finger = params.finger;
 
         this.calcXY();
-        this.drawButton();
+        this.isSpace() ? this.drawSpaceButton() : this.drawButton();
         this.drawText();
+    }
+
+    /**
+     * @param isPressed
+     */
+    public setIsPressed(isPressed: boolean): void {
+        this.isPressed = isPressed;
+
+        if (this.graphics) {
+            this.isSpace() ? this.drawSpaceButtonBackground() : this.drawButtonBackground();
+        }
     }
 
     /**
@@ -48,51 +66,72 @@ export class KeyboardButtonGameObject extends Phaser.GameObjects.Extern {
         this.y = 420 + this.row * 38;
     }
 
+    private isSpace() {
+        return this.symbol == ' ';
+    }
+
     /**
      * Draw button background
      */
     private drawButton() {
-        if (this.symbol == ' ') {
-            this.drawSpaceButton();
-            return;
-        }
-        const radius = 15;
-        const circle = new Phaser.Geom.Circle(this.x, this.y, radius);
+        const circle = new Phaser.Geom.Circle(this.x, this.y, this.radius);
 
-        const graphics = this.scene.add.graphics({
+        this.graphics = this.scene.add.graphics({
             lineStyle: {
                 color: BORDER_COLOR_BY_FINGER[this.finger],
                 width: 2
             }
         });
 
-        graphics.fillStyle(BACKGROUND_COLOR_BY_FINGER[this.finger], 1);
-        graphics.fillCircle(this.x, this.y, radius);
+        this.drawButtonBackground();
 
-        graphics.strokeCircleShape(circle);
+        this.graphics.strokeCircleShape(circle);
+    }
+
+    private drawButtonBackground() {
+        const color = this.isPressed ? BORDER_COLOR_BY_FINGER : BACKGROUND_COLOR_BY_FINGER;
+        this.graphics.fillStyle(color[this.finger], 1);
+        this.graphics.fillCircle(this.x, this.y, this.radius);
     }
 
     /**
      * Draw space button background
      */
     private drawSpaceButton() {
-        const radius = 15;
-        const graphics = this.scene.add.graphics();
-        const width = 2 * radius * 8 * 2;
-        const height = 2 * radius;
+        const width = this.getSpaceWidth();
+        const height = this.getSpaceHeight();
 
-        graphics.fillStyle(BACKGROUND_COLOR_BY_FINGER[this.finger], 1);
-        graphics.fillRoundedRect(this.x - radius, this.y - radius, width, height, radius);
+        this.graphics = this.scene.add.graphics();
 
-        graphics.lineStyle(2, BORDER_COLOR_BY_FINGER[this.finger], 1);
-        graphics.strokeRoundedRect(this.x - radius, this.y - radius, width, height, radius);
+        this.drawSpaceButtonBackground();
+
+        this.graphics.lineStyle(2, BORDER_COLOR_BY_FINGER[this.finger], 1);
+        this.graphics.strokeRoundedRect(this.x - this.radius, this.y - this.radius, width, height, this.radius);
     }
+
+    private drawSpaceButtonBackground() {
+        const width = this.getSpaceWidth();
+        const height = this.getSpaceHeight();
+        const color = this.isPressed ? BORDER_COLOR_BY_FINGER : BACKGROUND_COLOR_BY_FINGER;
+
+        this.graphics.fillStyle(color[this.finger], 1);
+        this.graphics.fillRoundedRect(this.x - this.radius, this.y - this.radius, width, height, this.radius);
+    }
+
+    private getSpaceHeight() {
+        return 2 * this.radius;
+    }
+
+    private getSpaceWidth() {
+        return 2 * this.radius * 8 * 2;
+    }
+
 
     /**
      * Print buttons text
      */
     private drawText() {
-        this.scene.make.text(
+        this.text = this.scene.make.text(
             {
                 x: this.x,
                 y: this.y,
