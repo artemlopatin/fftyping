@@ -5,7 +5,8 @@ import {KeyboardButtonGameObject, KeyboardButtonPlugin} from './KeyboardButton';
 import backgroundImage from './images/background.png';
 import {ConstructorParams, CreateParams} from './types';
 import {KeyboardEventCode} from '../../enums/keyboardEventCode';
-import {store} from '../../store';
+import {fromEvent} from 'rxjs';
+import {filter} from 'rxjs/operators';
 
 export class KeyboardScene extends Phaser.Scene implements SceneInterface {
     background: Phaser.GameObjects.Image;
@@ -43,17 +44,31 @@ export class KeyboardScene extends Phaser.Scene implements SceneInterface {
             })
         });
 
-        store.subscribe(() => {
-            const pressedKeys = store.getState().pressedKeys;
-            const pressedKeysCode = Object.keys(pressedKeys);
-            for (const code in this.keyboardButtons) {
-                const isPressed = pressedKeysCode.includes(code);
-                this.keyboardButtons[code as KeyboardEventCode].setIsPressed(isPressed);
-            }
+        const keyDown = fromEvent(document, 'keydown');
+        keyDown
+            .pipe(
+                filter((event: KeyboardEvent) => !event.repeat),
+                filter((event: KeyboardEvent) => event.code in KeyboardEventCode),
+            )
+            .subscribe((event: KeyboardEvent) => {
+                this.setIsPressedButton(event.code as KeyboardEventCode, true);
+            });
 
-        });
+        const keyUp = fromEvent(document, 'keyup');
+        keyUp
+            .pipe(
+                filter((event: KeyboardEvent) => event.code in KeyboardEventCode),
+            )
+            .subscribe((event: KeyboardEvent) => {
+                this.setIsPressedButton(event.code as KeyboardEventCode, false);
+            });
     }
 
     update(time: number, delta: number) {
+    }
+
+    private setIsPressedButton(code: KeyboardEventCode, isPressed: boolean) {
+        const keyboardButton = this.keyboardButtons[code];
+        keyboardButton && keyboardButton.setIsPressed(isPressed);
     }
 }

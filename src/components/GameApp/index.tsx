@@ -2,7 +2,6 @@ import React from 'react';
 import Phaser from 'phaser'
 import {KeyboardScene} from '../../scenes/KeyboardScene';
 import {BackgroundScene} from '../../scenes/BackgroundScene';
-
 import {gameConfig} from './constants';
 import {keyboardListener} from '../../services/keyboardListener';
 import {store} from '../../store';
