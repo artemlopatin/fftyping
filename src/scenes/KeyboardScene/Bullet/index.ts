@@ -7,10 +7,16 @@ import bulletImage from './images/bullet.png';
 export class BulletGameObject extends Phaser.GameObjects.Image {
     speed: number;
 
+    static loadImages(scene: Phaser.Scene) {
+        scene.load.image('bullet', bulletImage);
+    }
+
     constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | integer) {
         super(scene, x, y, texture, frame);
 
-        this.speed = 1;
+        Phaser.GameObjects.Image.call(this, scene, 0, 0, 'bullet');
+
+        this.speed = Phaser.Math.GetSpeed(1000, 1);
     }
 
     fire(x: number, y: number) {
