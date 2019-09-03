@@ -2,7 +2,6 @@ import Phaser from 'phaser'
 import {keyboardMap} from '../../constants/keyboardMap';
 import {SceneInterface} from '../SceneInterface';
 import {KeyboardButtonGameObject, KeyboardButtonPlugin} from './KeyboardButton';
-import backgroundImage from './images/background.png';
 import {ConstructorParams, CreateParams} from './types';
 import {KeyboardEventCode} from '../../enums/keyboardEventCode';
 import {fromEvent} from 'rxjs';
@@ -10,7 +9,6 @@ import {filter} from 'rxjs/operators';
 import {BulletGameObject, BulletPlugin} from './Bullet';
 
 export class KeyboardScene extends Phaser.Scene implements SceneInterface {
-    background: Phaser.GameObjects.Image;
     keyboardButtons: { [key in KeyboardEventCode]?: KeyboardButtonGameObject };
     bullets: Phaser.GameObjects.Group;
 
@@ -27,14 +25,10 @@ export class KeyboardScene extends Phaser.Scene implements SceneInterface {
         this.load.plugin('KeyboardButtonPlugin', KeyboardButtonPlugin, true);
         this.load.plugin('BulletPlugin', BulletPlugin, true);
 
-        this.load.image('background', backgroundImage);
         BulletGameObject.loadImages(this);
     }
 
     create(data: CreateParams) {
-        this.background = this.add.image(0, 350, 'background');
-        this.background.setOrigin(0, 0);
-        this.background.displayHeight = 250;
 
         keyboardMap.forEach((keysRow, row) => {
             keysRow.forEach((key, column) => {

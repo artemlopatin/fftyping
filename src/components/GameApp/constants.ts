@@ -9,9 +9,6 @@ export const gameConfig: GameConfig = {
     type: Phaser.AUTO,
     parent: GAME_CONTAINER_ID,
     physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: {y: 200}
-        }
+        default: 'arcade'
     },
 };
